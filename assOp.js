@@ -1,11 +1,11 @@
 
 // Create a variable called x and set its initial value to 5 -->
 
-    let x = 5;
+ //   let x = 5;
 	
 
 // Add 3 to the value of x using the + operator, and assign the new value (8) back to x -->
-	
+	let x = 5;
     x = x + 3;
 
 
@@ -16,8 +16,12 @@
     // Appends output value of x to the HTML span element
     document.getElementById("output").innerHTML = x;
 
-
-
+    // Add an event listener to the <span> element using <input> element
+    const outputInput = document.querySelector('#output input');
+    outputInput.addEventListener("input", function() {
+        const newValue = outputInput.value;
+        console.log("New value entered: " + newValue);
+    });
 
 
 
@@ -26,26 +30,25 @@
 
 //DETAILED EXPLANATIONS BELOW ARE FOR YOUTUBE TUTORIAL
 
+/*In this updated code, I added an <input> tag inside the span element with an initial value of 10, which is the final value of x.
+ I also added an event listener to the input field that listens for the input event, which is fired whenever the user enters a new value
+  in the input field.
 
-/* 
-
-let x = 5;  // the value 5 is assigned to the variable x using the equals sign (=) assignment operator
-console.log(x);  // output: 5
-
-x = x + 3;  // the value of x is added to 3 using the plus sign (+) arithmetic operator, then the result is assigned back to x using the equals sign (=) assignment operator
-console.log(x);  // output: 8
-
-x += 2;  // the value of x is added to 2 using the plus sign (+) arithmetic operator, then the result is assigned back to x using the compound assignment operator (+=)
-console.log(x);  // output: 10
+Inside the event listener function, I get the new value entered by the user using the value property of the input field, and log it to
+ the console using the console.log() function. You can modify the code inside the event listener function to perform a different action 
+ based on your requirements.
 
 */
 
 
+//######################################################################
+//SAMPLE CODE TO GAUGE UNDERSTANDING OF CONCEPT
+// <p>The value of y is: <span id="entry"><input type="text" value=20></span></p>
 
-/*
-let y = "hello";  // the string "hello" is assigned to the variable y using the equals sign (=) assignment operator
-console.log(y);  // output: "hello"
+ /* const entryInput = document.querySelector('#entry input');
+    entryInput.addEventListener("input", function() {
+        const newValue = entryInput.value;
+        console.log("New value entered: " + newValue);
+    });
 
-y = y + " world";  // the string " world" is concatenated to the string in y using the plus sign (+) concatenation operator, then the result is assigned back to y using the equals sign (=) assignment operator
-console.log(y);  // output: "hello world"
-*/
+    */
